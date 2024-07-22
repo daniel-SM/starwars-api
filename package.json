@@ -1,0 +1,22 @@
+{
+  "name": "starwars-api",
+  "version": "1.0.0",
+  "description": "StarWars moveis API developed with NodeJS and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-SM/starwars-api.git"
+  },
+  "author": "Daniel Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-SM/starwars-api/issues"
+  },
+  "homepage": "https://github.com/daniel-SM/starwars-api#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
