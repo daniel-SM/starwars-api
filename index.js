@@ -32,6 +32,12 @@ app.post("/", async (req, res) => {
     return res.send(movie)
 })
 
+app.delete("/:id", async (req, res) => {
+    const movie = await Movie.findByIdAndDelete(req.params.id)
+
+    return res.send(movie)
+})
+
 app.listen(port, () => {
     mongoose.connect(process.env.MONGODB_URL)
 
