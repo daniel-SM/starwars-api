@@ -6,8 +6,6 @@ const app = express()
 
 app.use(express.json())
 
-mongoose.connect(process.env.MONGODB_URL)
-
 const Movie = mongoose.model("Movie", {
     title: String,
     description: String,
@@ -15,8 +13,10 @@ const Movie = mongoose.model("Movie", {
     trailer_url: String,
 })
 
-app.get("/", (req, res) => {
-    return res.send("Hello World!")
+app.get("/", async (req, res) => {
+    const movies = await Movie.find()
+
+    return res.send(movies)
 })
 
 app.post("/", async (req, res) => {
@@ -33,5 +33,7 @@ app.post("/", async (req, res) => {
 })
 
 app.listen(port, () => {
+    mongoose.connect(process.env.MONGODB_URL)
+
     console.log(`App running on port ${port}...`);
 })
